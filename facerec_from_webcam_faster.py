@@ -95,6 +95,12 @@ while True:
 		print "new face recognized Time:",current_time
 		#it will insert and update the time stamp of an user's into database
 		insert.create_new_user(id,current_time)
+
+		# os.system(' telegram-cli -k server.pub -W -e "msg Alertsystem  WARNING !!!!" "safe_quit"'%())
+		os.system(' telegram-cli -k server.pub -W -e "msg Alertsystem WARNING: A NEW PERSON IS ENTERED !!!!  " "safe_quit" ')
+		os.system(' telegram-cli -k server.pub -W -e "send_photo Alertsystem %s" "safe_quit"' %(filename) )
+		os.system(' telegram-cli -k server.pub -W -e "msg Alertsystem NEW USER_ID: %s " "safe_quit" '%(id))
+
 		data=select.select_user(name)
 		print "------------------------------------------------"
 		print "\t\t::USER DISCRIPTIONS::"
