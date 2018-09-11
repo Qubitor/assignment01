@@ -109,7 +109,7 @@ while True:
 		time=str(data[2])
 		print "LAST RECOGNIZED TIME :",time[11:],time[0:11]
 		print "------------------------------------------------\n\n\n"
-
+		os.system(' telegram-cli -k server.pub -W -e "msg Alertsystem TIME STAMP: %s " "safe_quit" '%(time))
 	else:
 		#if the user is already exits it will just update time stamp into database
 		data=select.select_user(name)
